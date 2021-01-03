@@ -35,11 +35,11 @@ set signcolumn =yes
 set mouse      =nvc
 
 " Scrolling & indentation
-set expandtab shiftround smartindent
+set shiftround smartindent {{#if tabspace}}expandtab{{/if}}
 set scrolloff   =4
-set tabstop     =4
-set shiftwidth  =4
-set softtabstop =4
+set tabstop     ={{tabwidth}}
+set shiftwidth  ={{tabwidth}}
+set softtabstop ={{tabwidth}}
 set foldmethod  =syntax
 
 " Whitespace & width

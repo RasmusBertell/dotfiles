@@ -4,3 +4,5 @@
 "init.vim" = "~/.config/nvim/init.vim"
 
 [default.variables]
+tabwidth = 4
+tabspace = true
