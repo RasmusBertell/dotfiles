@@ -1,0 +1,6 @@
+[helpers]
+
+[default.files]
+"init.vim" = "~/.config/nvim/init.vim"
+
+[default.variables]
