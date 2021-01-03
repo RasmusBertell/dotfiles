@@ -48,15 +48,7 @@ set colorcolumn    =80
 set textwidth      =80
 
 " Mappings
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
 noremap <leader>b :Buffers<cr>
 noremap <leader>q :wq<cr>
-noremap <leader>e :call fzf#run(fzf#wrap({'source': 'fd --type f'}))<cr>
 noremap <leader>/ :Rg<cr>
-
-" VimWiki
-let g:vimwiki_list = [{"path": "~/documents/wiki/"}]
+noremap <leader>e :call fzf#run(fzf#wrap({'source': 'fd --type f'}))<cr>
