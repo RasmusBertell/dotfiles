@@ -6,3 +6,6 @@
 [neovim.variables]
 tabwidth = 4
 tabspace = true
+
+[tmux.files]
+"tmux.conf" = "~/.config/tmux/tmux.conf"
