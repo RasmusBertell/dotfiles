@@ -16,8 +16,14 @@ Editor           NeoVim
 
 - Install [dotter](https://github.com/SuperCuber/dotter)
 - Clone this repository
-- Create local.toml in `repo/.dotter`
+- Create `local.toml` in `.dotter` folder
 - Deploy with dotter
+
+### Example minimal `local.toml`
+
+```toml
+packages = ["neovim", "tmux", "zsh"]
+```
 
 ## Screenshots
 
