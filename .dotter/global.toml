@@ -1,18 +1,18 @@
 [helpers]
 
 [neovim.files]
-"init.vim" = "~/.config/nvim/init.vim"
+"neovim/init.vim" = "~/.config/nvim/init.vim"
 
 [neovim.variables]
 tabwidth = 4
 tabspace = true
 
 [tmux.files]
-"tmux.conf" = "~/.config/tmux/tmux.conf"
+"tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
 
 [zsh.files]
-zshrc  = "~/.config/zsh/.zshrc"
-zpath  = "~/.config/zsh/.zpath"
-zshenv = "~/.config/zsh/.zshenv"
-zlogin = "~/.config/zsh/.zlogin"
-zalias = "~/.config/zsh/.zalias"
+"zsh/zshrc"  = "~/.config/zsh/.zshrc"
+"zsh/zpath"  = "~/.config/zsh/.zpath"
+"zsh/zshenv" = "~/.config/zsh/.zshenv"
+"zsh/zlogin" = "~/.config/zsh/.zlogin"
+"zsh/zalias" = "~/.config/zsh/.zalias"
