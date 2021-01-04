@@ -9,3 +9,10 @@ tabspace = true
 
 [tmux.files]
 "tmux.conf" = "~/.config/tmux/tmux.conf"
+
+[zsh.files]
+zshrc  = "~/.config/zsh/.zshrc"
+zpath  = "~/.config/zsh/.zpath"
+zshenv = "~/.config/zsh/.zshenv"
+zlogin = "~/.config/zsh/.zlogin"
+zalias = "~/.config/zsh/.zalias"
