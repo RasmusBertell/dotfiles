@@ -7,9 +7,11 @@ history = 2147483647
 "nvim/init.vim" = "~/.config/nvim/init.vim"
 
 [nvim.variables]
+scrolloff = 5
 tabwidth  = 4
 tabspace  = true
 textwidth = 80
+folding   = "syntax"
 
 [tmux.files]
 # requires "default"
