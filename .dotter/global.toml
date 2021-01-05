@@ -1,5 +1,7 @@
 [helpers]
 
+[default.variables]
+history = 2147483647
 
 [nvim.files]
 "nvim/init.vim" = "~/.config/nvim/init.vim"
@@ -10,9 +12,11 @@ tabspace  = true
 textwidth = 80
 
 [tmux.files]
+# requires "default"
 "tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
 
 [zsh.files]
+# requires "default"
 "zsh/zshrc"  = "~/.config/zsh/.zshrc"
 "zsh/zpath"  = "~/.config/zsh/.zpath"
 "zsh/zshenv" = "~/.config/zsh/.zshenv"

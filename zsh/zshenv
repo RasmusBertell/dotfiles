@@ -9,8 +9,8 @@ export VISUAL="nvim"
 
 # History
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
-export HISTSIZE=2147483647
-export SAVEHIST=2147483647
+export HISTSIZE={{history}}
+export SAVEHIST={{history}}
 
 # Programs
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/config"
