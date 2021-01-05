@@ -4,7 +4,7 @@
 history = 2147483647
 
 [nvim.files]
-"nvim/init.vim" = "~/.config/nvim/init.vim"
+"nvim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"
 
 [nvim.variables]
 scrolloff = 5
@@ -15,12 +15,12 @@ folding   = "syntax"
 
 [tmux.files]
 # requires "default"
-"tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
+"tmux/tmux.conf" = "$XDG_CONFIG_HOME/tmux/tmux.conf"
 
 [zsh.files]
 # requires "default"
-"zsh/zshrc"  = "~/.config/zsh/.zshrc"
-"zsh/zpath"  = "~/.config/zsh/.zpath"
-"zsh/zshenv" = "~/.config/zsh/.zshenv"
-"zsh/zlogin" = "~/.config/zsh/.zlogin"
-"zsh/zalias" = "~/.config/zsh/.zalias"
+"zsh/zshrc"      = "$XDG_CONFIG_HOME/zsh/.zshrc"
+"zsh/zpath"      = "$XDG_CONFIG_HOME/zsh/.zpath"
+"zsh/zshenv"     = "$XDG_CONFIG_HOME/zsh/.zshenv"
+"zsh/zlogin"     = "$XDG_CONFIG_HOME/zsh/.zlogin"
+"zsh/zalias"     = "$XDG_CONFIG_HOME/zsh/.zalias"
