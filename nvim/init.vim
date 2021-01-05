@@ -35,7 +35,8 @@ set signcolumn =yes
 set mouse      =nvc
 
 " Scrolling & indentation
-set shiftround smartindent {{#if tabspace}}expandtab{{/if}}
+{{#if tabspace}}set shiftround expandtab{{/if}}
+set smartindent
 set scrolloff   =4
 set tabstop     ={{tabwidth}}
 set shiftwidth  ={{tabwidth}}
@@ -44,8 +45,8 @@ set foldmethod  =syntax
 
 " Whitespace & width
 set list listchars =tab:«-»,trail:·,nbsp:␣
-set colorcolumn    =80
-set textwidth      =80
+set colorcolumn    ={{textwidth}}
+set textwidth      ={{textwidth}}
 
 " Mappings
 noremap <leader>b :Buffers<cr>
