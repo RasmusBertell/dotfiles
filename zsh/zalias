@@ -8,9 +8,9 @@ alias vi="nvim"
 {{~/if}}
 
 {{#if (is_executable "exa")~}}
-alias exa="exa --time-style=long-iso --color=auto --group-directories-first"
-alias ls="exa --all --long --grid --header --classify --git --color=auto"
-alias ll="exa --tree --color=auto"
+alias exa="exa --time-style=long-iso --group-directories-first --icons --git"
+alias ls="exa --all --long --grid --header --classify"
+alias ll="exa --tree --level=2 --git-ignore"
 {{~else}}
 alias ls="ls -lhaFN --locor"
 {{~/if}}

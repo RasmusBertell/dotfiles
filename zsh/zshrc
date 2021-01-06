@@ -14,5 +14,8 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # Starship prompt
 eval "$(starship init zsh)"
