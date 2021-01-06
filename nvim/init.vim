@@ -8,6 +8,7 @@ call plug#begin(stdpath('data').'/pack')
     " Code completion & language syntax
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'ledger/vim-ledger'
+    Plug 'mustache/vim-mustache-handlebars'
     Plug 'vimwiki/vimwiki'
     Plug 'mattn/emmet-vim'
     Plug 'lervag/vimtex'
