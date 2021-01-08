@@ -1,7 +1,9 @@
 [helpers]
 
 [default.variables]
-history = 2147483647
+username = "rasmus"
+locale   = "fi-FI"
+history  = 2147483647
 
 [nvim.files]
 "nvim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"
@@ -25,3 +27,7 @@ folding   = "syntax"
 "zsh/zshenv"     = "$XDG_CONFIG_HOME/zsh/.zshenv"
 "zsh/zlogin"     = "$XDG_CONFIG_HOME/zsh/.zlogin"
 "zsh/zalias"     = "$XDG_CONFIG_HOME/zsh/.zalias"
+
+[task.files]
+#requires default
+"task/config" = "$XDG_CONFIG_HOME/task/config"
