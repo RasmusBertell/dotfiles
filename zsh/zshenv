@@ -3,6 +3,12 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# Mako
+export XDG_CURRENT_DESKTOP="Unity"
+
+# Environment
+export XKB_DEFAULT_LAYOUT="fi"
+
 # Editor
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -12,10 +18,19 @@ export HISTFILE="$XDG_CACHE_HOME/zsh/history"
 export HISTSIZE={{history}}
 export SAVEHIST={{history}}
 
-# Programs
+# Firefox
+export MOZ_ENABLE_WAYLAND=1
+
+# Starship
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/config"
+
+# Taskwarrior
 export TASKRC="$XDG_CONFIG_HOME/task/config"
 export TASKDATA="$XDG_DATA_HOME/task"
+
+# Timewarrior
 export TIMEWARRIORDB="$XDG_DATA_HOME/timew"
-export ZPLUG_HOME="$XDG_DATA_HOME/zsh/zplug"
+
+# Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
