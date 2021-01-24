@@ -15,12 +15,16 @@ tabspace  = true
 textwidth = 80
 folding   = "syntax"
 
+[tmux]
+depends = ["default"]
+
 [tmux.files]
-# requires "default"
 "tmux/tmux.conf" = "$XDG_CONFIG_HOME/tmux/tmux.conf"
 
+[zsh]
+depends = ["default"]
+
 [zsh.files]
-# requires "default"
 "zsh/zshrc"      = "$XDG_CONFIG_HOME/zsh/.zshrc"
 "zsh/zpath"      = "$XDG_CONFIG_HOME/zsh/.zpath"
 "zsh/zshenv"     = "$XDG_CONFIG_HOME/zsh/.zshenv"
@@ -28,6 +32,8 @@ folding   = "syntax"
 "zsh/zalias"     = "$XDG_CONFIG_HOME/zsh/.zalias"
 "zsh/etc/zshenv" = { target = "/etc/zsh/zshenv", type = "symbolic", owner = "root"}
 
+[task]
+depends = ["default"]
+
 [task.files]
-#requires default
 "task/config" = "$XDG_CONFIG_HOME/task/config"
