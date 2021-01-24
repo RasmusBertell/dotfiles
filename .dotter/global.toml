@@ -21,12 +21,12 @@ folding   = "syntax"
 
 [zsh.files]
 # requires "default"
-"zsh/etc/zshenv" = "/etc/zsh/zshenv"
 "zsh/zshrc"      = "$XDG_CONFIG_HOME/zsh/.zshrc"
 "zsh/zpath"      = "$XDG_CONFIG_HOME/zsh/.zpath"
 "zsh/zshenv"     = "$XDG_CONFIG_HOME/zsh/.zshenv"
 "zsh/zlogin"     = "$XDG_CONFIG_HOME/zsh/.zlogin"
 "zsh/zalias"     = "$XDG_CONFIG_HOME/zsh/.zalias"
+"zsh/etc/zshenv" = { target = "/etc/zsh/zshenv", type = "symbolic", owner = "root"}
 
 [task.files]
 #requires default
