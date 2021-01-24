@@ -12,7 +12,7 @@ alias exa="exa --time-style=long-iso --group-directories-first --icons --git"
 alias ls="exa --all --long --grid --header --classify"
 alias ll="exa --tree --level=2 --git-ignore"
 {{~else}}
-alias ls="ls -lhaFN --locor"
+alias ls="ls -lhaFN --color"
 {{~/if}}
 
 {{#if (is_executable "bat")~}}
