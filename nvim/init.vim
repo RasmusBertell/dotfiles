@@ -4,9 +4,15 @@ call plug#begin(stdpath('data').'/pack')
     Plug 'chrisbra/Colorizer'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
+    Plug 'preservim/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'vim-airline/vim-airline'
+    Plug 'tpope/vim-vinegar'
 
     " Code completion & language syntax
+    Plug 'sheerun/vim-polyglot'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'vim-vdebug/vdebug'
     Plug 'ledger/vim-ledger'
     Plug 'mustache/vim-mustache-handlebars'
     Plug 'vimwiki/vimwiki'
