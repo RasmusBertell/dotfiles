@@ -30,7 +30,7 @@ depends = ["default"]
 "zsh/zshenv"     = "$XDG_CONFIG_HOME/zsh/.zshenv"
 "zsh/zlogin"     = "$XDG_CONFIG_HOME/zsh/.zlogin"
 "zsh/zalias"     = "$XDG_CONFIG_HOME/zsh/.zalias"
-"zsh/etc/zshenv" = { target = "/etc/zsh/zshenv", type = "symbolic", owner = "root"}
+"zsh/etc/zshenv" = { target = "/etc/zsh/zshenv", type = "template", owner = "root"}
 
 [zsh.variables]
 root_access = true
