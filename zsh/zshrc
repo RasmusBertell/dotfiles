@@ -71,8 +71,5 @@ zstyle ':completion::complete:*' cache-path "${TMPDIR:-/tmp}/zsh-${UID}"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# zoxide
-eval "$(zoxide init zsh)"
-
 # Starship prompt
 eval "$(starship init zsh)"
