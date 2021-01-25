@@ -32,6 +32,9 @@ depends = ["default"]
 "zsh/zalias"     = "$XDG_CONFIG_HOME/zsh/.zalias"
 "zsh/etc/zshenv" = { target = "/etc/zsh/zshenv", type = "symbolic", owner = "root"}
 
+[zsh.variables]
+root_access = true
+
 [task]
 depends = ["default"]
 
