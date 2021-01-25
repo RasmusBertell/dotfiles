@@ -16,7 +16,8 @@ zpm load                      \
   zpm-zsh/colorize,async      \
   zpm-zsh/ssh,async           \
   zpm-zsh/dot,async           \
-  zpm-zsh/undollar,async
+  zpm-zsh/undollar,async      \
+  wting/autojump
 
 ### Plugins for local host
 zpm if-not ssh load                                                                    \
