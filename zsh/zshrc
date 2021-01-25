@@ -5,18 +5,32 @@ source "$XDG_DATA_HOME/zsh/zpm/zpm.zsh" 2>/dev/null || {
     source "$XDG_DATA_HOME/zsh/zpm/zpm.zsh"
 }
 
-zpm load                                                                           \
-    zpm-zsh/tmux,apply:path                                                        \
-    zpm-zsh/ignored-users,async                                                    \
-    zpm-zsh/check-deps,async                                                       \
-    zpm-zsh/ls,async                                                               \
-    zpm-zsh/colorize,async                                                         \
-    zpm-zsh/ssh,async                                                              \
-    voronkovich/gitignore.plugin.zsh,async                                         \
-    mdumitru/fancy-ctrl-z,async                                                    \
-    zsh-users/zsh-history-substring-search,source:zsh-history-substring-search.zsh \
-    zdharma/fast-syntax-highlighting,async                                         \
-    zsh-users/zsh-autosuggestions,source:zsh-autosuggestions.zsh,async             \
+### Tmux
+zpm if ssh load zpm-zsh/tmux
+zpm if-not ssh load zpm-zsh/tmux,apply:path
+
+### 3party plugins
+zpm load                      \
+  zpm-zsh/ignored-users,async \
+  zpm-zsh/check-deps,async    \
+  zpm-zsh/colorize,async      \
+  zpm-zsh/ssh,async           \
+  zpm-zsh/dot,async           \
+  zpm-zsh/undollar,async
+
+### Plugins for local host
+zpm if-not ssh load                                                                    \
+  lukechilds/zsh-better-npm-completion,async                                           \
+  zpm-zsh/clipboard                                                                    \
+  zpm-zsh/mysql-colorize,async                                                         \
+  zpm-zsh/zshmarks,async                                                               \
+  voronkovich/gitignore.plugin.zsh,async                                               \
+  zpm-zsh/autoenv,async                                                                \
+  mdumitru/fancy-ctrl-z,async                                                          \
+  zsh-users/zsh-history-substring-search,source:zsh-history-substring-search.zsh,async \
+  zdharma/fast-syntax-highlighting,async                                               \
+  zsh-users/zsh-autosuggestions,source:zsh-autosuggestions.zsh,async                   \
+  psprint/history-search-multi-word,fpath:/,async
 
 setopt hist_expire_dups_first hist_find_no_dups hist_ignore_dups bang_hist
 setopt hist_ignore_space hist_reduce_blanks hist_verify inc_append_history
