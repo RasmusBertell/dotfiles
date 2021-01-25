@@ -17,7 +17,7 @@ zpm load                      \
   zpm-zsh/ssh,async           \
   zpm-zsh/dot,async           \
   zpm-zsh/undollar,async      \
-  wting/autojump
+  rupa/z,source:z.sh,async
 
 ### Plugins for local host
 zpm if-not ssh load                                                                    \
