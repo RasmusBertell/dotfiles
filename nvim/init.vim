@@ -43,10 +43,11 @@ set lazyredraw
 set ignorecase smartcase
 set splitright splitbelow
 set number relativenumber
-set signcolumn =yes
-set foldcolumn =1
-set mouse      =nvc
-set clipboard  =unnamedplus
+set signcolumn     =yes
+set foldcolumn     =1
+set foldlevelstart =1
+set mouse          =nvc
+set clipboard      =unnamedplus
 
 " Scrolling & indentation
 {{#if tabspace}}set shiftround expandtab{{/if}}
