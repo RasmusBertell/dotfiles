@@ -1,7 +1,7 @@
 data.location=/home/{{username}}/.local/share/task
 
 # Holidays
-include /usr/share/task/rc/holidays.{{locale}}.rc
+include /usr/share/doc/task/rc/holidays.{{locale}}.rc
 
 # Options
 weekstart = monday
@@ -10,6 +10,11 @@ verbose   = blank,footnote,label,new-id,new-uuid,affected,edit,special,project,s
 # Attributes
 uda.estimate.label=Estimate
 uda.estimate.type=duration
+uda.redbooth.label=Redbooth
+uda.redbooth.type=string
 
 # Coefficients
 urgency.uda.estimate.coefficient=1.8
+
+context.work=+atFlow
+context=work
