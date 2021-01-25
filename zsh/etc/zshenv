@@ -1,2 +1,2 @@
 ZDOTDIR=$HOME/.config/zsh
-{{#if !root_access}}source "$ZDOTDIR/.zshenv"{{/if}}
+{{#unless root_access}}source "$ZDOTDIR/.zshenv"{{/unless}}
