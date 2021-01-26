@@ -1,8 +1,6 @@
 call plug#begin(stdpath('data').'/pack')
     " Theme & colors
     Plug 'morhetz/gruvbox'
-    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'ryanoasis/vim-devicons'
     Plug 'vim-airline/vim-airline'
 
     " Language syntax
@@ -12,10 +10,17 @@ call plug#begin(stdpath('data').'/pack')
     " Code completion
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+    Plug 'adoy/vim-php-refactoring-toolbox', {'for': 'php'}
+    Plug 'phpactor/phpactor', { 'do': ':call phpactor#Update()', 'for': 'php'}
+    Plug 'SirVer/ultisnips'
+    Plug 'phux/vim-snippets'
     Plug 'w0rp/ale'
 
     " IDE
-    Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
+    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'preservim/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'vim-vdebug/vdebug'
 
     " Motions & actions
@@ -47,6 +52,9 @@ set foldcolumn     =1
 set foldlevelstart =1
 set mouse          =nvc
 set clipboard      =unnamedplus
+set cmdheight      =2
+set updatetime     =300
+set shortmess     +=c
 
 " Scrolling & indentation
 set {{#if tabspace}}shiftround expandtab {{/if}}smartindent
@@ -78,11 +86,13 @@ function! s:denite_settings() abort
 endfunction
 
 " Deoplete
-let g:deoplete#enable_at_startup  = 1
-let g:deoplete#enable_ignore_case = 1
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+let g:deoplete#enable_at_startup          = 1
+let g:deoplete#enable_ignore_case         = 1
+let g:neosnippet#enable_completed_snippet = 1
 
-" omnifuncs
+inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<TAB>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<TAB>"
+
 augroup omnifuncs
     au!
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -93,8 +103,65 @@ augroup omnifuncs
     autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 augroup end
 
-" linting
-let g:ale_completion_enabled = 1
-let g:ale_sign_column_always = 1
-let g:ale_sign_error         = ' '
-let g:ale_sign_warning       = ' '
+" ALE
+let g:ale_lint_on_text_changed  = "never"
+let g:ale_lint_on_enter         = 0
+let g:ale_echo_msg_format       = "[%linter%] %s [%severity%]"
+let g:ale_open_list             = 1
+let g:ale_keep_list_window_open = 0
+let g:ale_set_quickfix          = 0
+let g:ale_list_window_size      = 5
+let g:ale_php_phpcbf_standard   = "PSR2"
+let g:ale_php_phpcs_standard    = "phpcs.xml.dist"
+let g:ale_php_phpmd_ruleset     = "phpmd.xml"
+let g:ale_completion_enabled    = 1
+let g:ale_sign_column_always    = 1
+let g:ale_fix_on_save           = 1
+let g:ale_sign_error            = " "
+let g:ale_sign_warning          = " "
+let g:ale_fixers                = {
+    \ "*"  : [ "remove_trailing_lines", "trim_whitespace" ],
+    \ "php": [ "phpcbf", "php_cs_fixer", "remove_trailing_lines", "trim_whitespace" ],
+\}
+
+" Ultisnip
+let g:UltiSnipsExpandTrigger        = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger  = "<c-b>"
+let g:ultisnips_php_scalar_types    = 1
+
+" PHP Code Sniffer
+command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
+map <c-s> <esc>:w<cr>:Silent php-cs-fixer fix %:p --level=symfony<cr>
+
+" PHP Refactoring
+let g:vim_php_refactoring_default_property_visibility = 'private'
+let g:vim_php_refactoring_default_method_visibility   = 'private'
+let g:vim_php_refactoring_auto_validate_visibility    = 1
+let g:vim_php_refactoring_phpdoc                      = "pdv#DocumentCurrentLine"
+let g:vim_php_refactoring_use_default_mapping         = 0
+
+nnoremap <leader>rlv :call PhpRenameLocalVariable()<CR>
+nnoremap <leader>rcv :call PhpRenameClassVariable()<CR>
+nnoremap <leader>rrm :call PhpRenameMethod()<CR>
+nnoremap <leader>reu :call PhpExtractUse()<CR>
+vnoremap <leader>rec :call PhpExtractConst()<CR>
+nnoremap <leader>rep :call PhpExtractClassProperty()<CR>
+nnoremap <leader>rnp :call PhpCreateProperty()<CR>
+nnoremap <leader>rdu :call PhpDetectUnusedUseStatements()<CR>
+nnoremap <leader>rsg :call PhpCreateSettersAndGetters()<CR>
+
+" PHPActor
+let g:phpactor_executable = '~/.config/nvim/plugged/phpactor/bin/phpactor'
+
+nnoremap <m-m> :call phpactor#ContextMenu()<cr>
+nnoremap gd :call phpactor#GotoDefinition()<CR>
+nnoremap gr :call phpactor#FindReferences()<CR>
+vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+vnoremap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+nnoremap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
+nnoremap <silent><Leader>rei :call phpactor#ClassInflect()<CR>
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
