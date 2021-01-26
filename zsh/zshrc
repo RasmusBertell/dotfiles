@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source "$ZDOTDIR/.zalias"
+
 source "$XDG_DATA_HOME/zsh/zpm/zpm.zsh" 2>/dev/null || {
     git clone https://github.com/zpm-zsh/zpm "$XDG_DATA_HOME/zsh/zpm"
     source "$XDG_DATA_HOME/zsh/zpm/zpm.zsh"
