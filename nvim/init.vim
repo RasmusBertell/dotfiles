@@ -17,16 +17,21 @@ call plug#begin(stdpath('data').'/pack')
     Plug 'w0rp/ale'
 
     " IDE
+    Plug 'mhinz/vim-startify'
     Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
     Plug 'preservim/nerdtree'
     Plug 'ryanoasis/vim-devicons'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'vim-vdebug/vdebug'
 
     " Motions & actions
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-abolish'
 
     " Git
     Plug 'tpope/vim-fugitive'
@@ -55,6 +60,7 @@ set clipboard      =unnamedplus
 set cmdheight      =2
 set updatetime     =300
 set shortmess     +=c
+let g:php_folding  = 2
 
 " Scrolling & indentation
 set {{#if tabspace}}shiftround expandtab {{/if}}smartindent
@@ -70,9 +76,10 @@ set colorcolumn    ={{textwidth}}
 set textwidth      ={{textwidth}}
 
 " Airline
+let g:airline_theme                        = "gruvbox"
 let g:airline_powerline_fonts              = 1
 let g:airline#extensions#tabline#enabled   = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = "unique_tail_improved"
 
 " Denite
 autocmd FileType denite call s:denite_settings()
@@ -152,6 +159,7 @@ nnoremap <leader>rdu :call PhpDetectUnusedUseStatements()<CR>
 nnoremap <leader>rsg :call PhpCreateSettersAndGetters()<CR>
 
 " PHPActor
+let g:phpactorPhpBin      = "/usr/bin/php7.3"
 let g:phpactor_executable = '~/.config/nvim/plugged/phpactor/bin/phpactor'
 
 nnoremap <m-m> :call phpactor#ContextMenu()<cr>
@@ -163,5 +171,11 @@ nnoremap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
 nnoremap <silent><Leader>rei :call phpactor#ClassInflect()<CR>
 
 " NERDTree
-nnoremap <leader>n :NERDTreeFocus<CR>
+autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" FZF
+noremap <leader>b :Buffers<cr>
+noremap <leader>q :wq<cr>
+noremap <leader>/ :Rg<cr>
+noremap <leader>e :call fzf#run(fzf#wrap({'source': 'fd --type f'}))<cr>
