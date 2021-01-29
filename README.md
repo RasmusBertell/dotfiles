@@ -5,11 +5,11 @@ This repository contains the dotfiles that I use in my GNU/Linux working
 environment, managed with [dotter](https://github.com/SuperCuber/dotter).
 
 ```
-Distribution     Gentoo Linux
-Window Manager   dwm
-Shell            zsh
-Terminal         st
-Editor           NeoVim
+Distribution   : Archlinux
+Window Manager : sway
+Shell          : zsh
+Terminal       : Alacritty
+Editor         : NeoVim
 ```
 
 ## Installation
@@ -27,6 +27,6 @@ packages = ["neovim", "tmux", "zsh"]
 
 ## Screenshots
 
-### NeoVim
+### NeoVim (out-of-date)
 
 ![NeoVim](/media/neovim.webp)
