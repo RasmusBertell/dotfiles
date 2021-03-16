@@ -44,9 +44,6 @@ export TIMEWARRIORDB="$XDG_DATA_HOME/timew"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
-# i3status-rs
-export I3RS_GITHUB_TOKEN="{{github_token}}"
-
 # GPG & Pass
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
