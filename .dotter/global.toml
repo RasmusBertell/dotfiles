@@ -5,6 +5,26 @@ username = "rasmus"
 locale   = "fi-FI"
 history  = 2147483647
 
+[gentoo.files]
+"portage/make.conf"                   = { target = "/etc/portage/make.conf",                   type = "symbolic", owner = "root" }
+"portage/package.accept_keywords"     = { target = "/etc/portage/package.accept_keywords",     type = "symbolic", owner = "root" }
+"portage/package.license"             = { target = "/etc/portage/package.license",             type = "symbolic", owner = "root" }
+"portage/package.use/app-misc.use"    = { target = "/etc/portage/package.use/app-misc.use",    type = "symbolic", owner = "root" }
+"portage/package.use/dev-lang.use"    = { target = "/etc/portage/package.use/dev-lang.use",    type = "symbolic", owner = "root" }
+"portage/package.use/dev-libs.use"    = { target = "/etc/portage/package.use/dev-libs.use",    type = "symbolic", owner = "root" }
+"portage/package.use/media-sound.use" = { target = "/etc/portage/package.use/media-sound.use", type = "symbolic", owner = "root" }
+"portage/package.use/sys-apps.use"    = { target = "/etc/portage/package.use/sys-apps.use",    type = "symbolic", owner = "root" }
+"portage/package.use/sys-auth.use"    = { target = "/etc/portage/package.use/sys-auth.use",    type = "symbolic", owner = "root" }
+"portage/package.use/x11-misc.use"    = { target = "/etc/portage/package.use/x11-misc.use",    type = "symbolic", owner = "root" }
+"portage/package.use/x11-terms.use"   = { target = "/etc/portage/package.use/x11-terms.use",   type = "symbolic", owner = "root" }
+"portage/package.use/x11-wm.use"      = { target = "/etc/portage/package.use/x11-wm.use",      type = "symbolic", owner = "root" }
+
+[dwm.files]
+"portage/savedconfig/x11-wm/dwm" = { target = "/etc/portage/savedconfig/x11-wm/dwm", type = "symbolic", owner = "root" }
+
+[st.files]
+"portage/savedconfig/x11-terms/st" = { target = "/etc/portage/savedconfig/x11-terms/st", type = "symbolic", owner = "root" }
+
 [nvim.files]
 "nvim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"
 
