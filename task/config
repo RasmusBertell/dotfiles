@@ -1,7 +1,10 @@
 data.location=/home/{{username}}/.local/share/task
 
+# Colorscheme
+# include /usr/share/doc/task/rc/dark-green-256.theme
+
 # Holidays
-include /usr/share/doc/task/rc/holidays.{{locale}}.rc
+# include /usr/share/doc/task/rc/holidays.{{locale}}.rc
 
 # Options
 weekstart = monday
@@ -12,6 +15,8 @@ uda.estimate.label=Estimate
 uda.estimate.type=duration
 uda.redbooth.label=Redbooth
 uda.redbooth.type=string
+uda.people.label=People
+uda.people.type=string
 
 # Coefficients
 urgency.uda.estimate.coefficient=1.8
