@@ -1,0 +1,34 @@
+virtual/dist-kernel ~amd64
+virtual/rust        ~amd64
+
+sys-kernel/vanilla-kernel ~amd64
+
+app-backup/timeshift ~amd64
+
+app-misc/timew ~amd64
+
+net-im/slack ~amd64
+net-im/teams ~amd64
+
+dev-lang/rust ~amd64
+dev-lang/php  ~amd64
+
+dev-php/symfony-config               ~amd64
+dev-php/symfony-dependency-injection ~amd64
+dev-php/symfony-event-dispatcher     ~amd64
+dev-php/xdebug-handler               ~amd64
+dev-php/symfony-process              ~amd64
+dev-php/symfony-finder               ~amd64
+dev-php/symfony-filesystem           ~amd64
+dev-php/symfony-console              ~amd64
+dev-php/spdx-licenses                ~amd64
+dev-php/semver                       ~amd64
+dev-php/reactphp-promise             ~amd64
+dev-php/psr-log                      ~amd64
+dev-php/phar-utils                   ~amd64
+dev-php/json-schema                  ~amd64
+dev-php/jsonlint                     ~amd64
+dev-php/ca-bundle                    ~amd64
+dev-php/composer                     ~amd64
+
+dev-libs/light ~amd64
