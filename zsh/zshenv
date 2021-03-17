@@ -9,12 +9,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export PATH="$PATH:$XDG_DATA_HOME/bin"
 export PATH="$PATH:$XDG_DATA_HOME/cargo/bin"
 
-# Mako
-export XDG_CURRENT_DESKTOP="Unity"
-
-# Environment
-export XKB_DEFAULT_LAYOUT="fi"
-
 # Editor
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -26,9 +20,6 @@ export BAT_PAGER="less"
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
 export HISTSIZE={{history}}
 export SAVEHIST={{history}}
-
-# Firefox
-export MOZ_ENABLE_WAYLAND=1
 
 # Starship
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/config"
@@ -48,5 +39,4 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 
-# Go
-export GOPATH="$XDG_DATA_HOME/go"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
