@@ -1,22 +1,5 @@
-{{#if (is_executable "ledger")~}}
-alias ledger="ledger --init-file $XDG_CONFIG_HOME/ledger/ledgerrc"
-{{~/if}}
-
-{{#if (is_executable "nvim")~}}
-alias vim="nvim"
-alias vi="nvim"
-{{~/if}}
-
-{{#if (is_executable "exa")~}}
 alias exa_params="--git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale"
 alias l="exa --git-ignore $exa_params"
 alias ls="exa $exa_params"
 alias la="exa --all $exa_params"
 alias ll="exa --header --long $exa_params"
-{{~else}}
-alias ls="ls -lhaFN --color"
-{{~/if}}
-
-{{#if (is_executable "bat")~}}
-alias cat="bat"
-{{~/if}}
