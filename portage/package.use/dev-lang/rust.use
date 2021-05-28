@@ -1,0 +1,1 @@
+dev-lang/rust clippy -debug -doc rls rustfmt -test -verify-sig -wasm

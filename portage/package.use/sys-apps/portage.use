@@ -1,0 +1,1 @@
+sys-apps/portage -apidoc -build -doc -gentoo-dev native-extensions rsync-verify -test

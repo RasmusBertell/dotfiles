@@ -1,56 +1,32 @@
 [helpers]
+"concatenate" = ".dotter/helpers/concatenate.rhai"
 
-[default.variables]
-username = "rasmus"
-locale   = "fi-FI"
-history  = 2147483647
+[portage]
 
-[linux.files]
-"xorg.conf.d/10-keyboard.conf" = {target = "/etc/X11/xorg.conf.d/10-keyboard.conf", type = "symbolic", owner = "root" }
-"xorg.conf.d/20-synaptic.conf" = {target = "/etc/X11/xorg.conf.d/20-synaptic.conf", type = "symbolic", owner = "root" }
-"X11/xinitrc" = "$XDG_CONFIG_HOME/X11/xinitrc"
+[portage.variables]
+"march"          = "native"
+"makeopts"       = 8
+"python_targets" = [ ]
+"llvm_targets"   = [ ]
+"cpu_flags"      = [ ]
+"video_cards"    = [ ]
+"mirrors"        = [ ]
 
-[archlinux.files]
-"X11/etc/xinitrc" = {target = "/etc/X11/xinit/xinitrc", type = "symbolic", owner = "root" }
+[portage.files."portage/make.conf"]
+target = "/etc/portage/make.conf"
+type   = "template"
+owner  = "root"
 
-[dwm.files]
-"portage/savedconfig/x11-wm/dwm" = { target = "/etc/portage/savedconfig/x11-wm/dwm", type = "symbolic", owner = "root" }
+[portage.files."portage/package.use/sys-apps/portage.use"]
+target = "/etc/portage/package.use/sys-apps/portage.use"
+type   = "template"
+owner  = "root"
 
-[st.files]
-"portage/savedconfig/x11-terms/st" = { target = "/etc/portage/savedconfig/x11-terms/st", type = "symbolic", owner = "root" }
+[rust]
 
-[nvim.files]
-"nvim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"
+[rust.variables]
 
-[nvim.variables]
-scrolloff = 5
-tabwidth  = 4
-tabspace  = true
-textwidth = 80
-folding   = "syntax"
-
-[tmux]
-depends = ["default"]
-
-[tmux.files]
-"tmux/tmux.conf" = "$XDG_CONFIG_HOME/tmux/tmux.conf"
-
-[zsh]
-depends = ["default"]
-
-[zsh.files]
-"zsh/zshrc"      = "$XDG_CONFIG_HOME/zsh/.zshrc"
-"zsh/zpath"      = "$XDG_CONFIG_HOME/zsh/.zpath"
-"zsh/zshenv"     = "$XDG_CONFIG_HOME/zsh/.zshenv"
-"zsh/zlogin"     = "$XDG_CONFIG_HOME/zsh/.zlogin"
-"zsh/zalias"     = "$XDG_CONFIG_HOME/zsh/.zalias"
-"zsh/etc/zshenv" = { target = "/etc/zsh/zshenv", type = "symbolic", owner = "root"}
-
-[zsh.variables]
-root_access = true
-
-[task]
-depends = ["default"]
-
-[task.files]
-"task/config" = "$XDG_CONFIG_HOME/task/config"
+[rust.files."portage/package.use/dev-lang/rust.use"]
+target = "/etc/portage/package.use/dev-lang/rust.use"
+type   = "template"
+owner  = "root"
