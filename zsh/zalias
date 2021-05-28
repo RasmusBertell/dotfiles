@@ -1,5 +1,0 @@
-alias exa_params="--git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale"
-alias l="exa --git-ignore $exa_params"
-alias ls="exa $exa_params"
-alias la="exa --all $exa_params"
-alias ll="exa --header --long $exa_params"
